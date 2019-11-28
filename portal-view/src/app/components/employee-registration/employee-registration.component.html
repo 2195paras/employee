@@ -1,0 +1,55 @@
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                        <label>First Name</label>
+                        <mat-form-field>
+                            <input matInput type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName?.errors }" />
+                            <div *ngIf="submitted && f.firstName?.errors" class="invalid-feedback">
+                                <div *ngIf="f.firstName?.errors.required">First Name is required</div>
+                            </div>
+                        </mat-form-field>
+                    </div>
+                    <div class="form-group">
+                        <label>Last Name</label>
+                        <mat-form-field>
+                            <input matInput type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName?.errors }" />
+                            <div *ngIf="submitted && f.lastName?.errors" class="invalid-feedback">
+                                <div *ngIf="f.lastName?.errors.required">Last Name is required</div>
+                            </div>
+                        </mat-form-field>
+                    </div>
+                    <div class="form-group">
+                        <label>Gender</label>
+                        <mat-form-field>
+                            <input matInput type="text" formControlName="gender" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.gender?.errors }" />
+                            <div *ngIf="submitted && f.gender?.errors" class="invalid-feedback">
+                                <div *ngIf="f.gender?.errors.required">gender is required</div>
+                            </div>
+                        </mat-form-field>
+                    </div>
+                    <div class="form-group">
+                        <label>Date Of Birth</label>
+                        <mat-form-field>
+                            <input matInput type="date" formControlName="dateOfBirth" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.dateOfBirth?.errors }" />
+                            <div *ngIf="submitted && f.dateOfBirth?.errors" class="invalid-feedback">
+                                <div *ngIf="f.dateOfBirth?.errors.required">dateOfBirth is required</div>
+                            </div>
+                        </mat-form-field>
+                    </div>
+                    <div class="form-group">
+                        <label>Department Name</label>
+                        <mat-form-field>
+                            <input matInput type="text" formControlName="departmentName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.departmentName?.errors }" />
+                        </mat-form-field>
+                    </div>
+                    <div class="form-group">
+                        <button [disabled]="loading" class="btn btn-primary">Register</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

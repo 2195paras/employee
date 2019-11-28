@@ -1,0 +1,22 @@
+<table class="table">
+    <thead class="black white-text">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Date of Birth</th>
+            <th scope="col">Department</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let employeeDetail of employeeDetails; let i = index;">
+            <th scope="row">{{i+1}}</th>
+            <td>{{employeeDetail?.firstName}}</td>
+            <td>{{employeeDetail?.lastName}}</td>
+            <td>{{employeeDetail?.gender}}</td>
+            <td>{{employeeDetail?.dateOfBirth}}</td>
+            <td>{{employeeDetail?.departmentName}}</td>
+        </tr>
+    </tbody>
+</table>
